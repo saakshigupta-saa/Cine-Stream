@@ -99,15 +99,56 @@ VITE_GEMINI_API_KEY=your_gemini_api_key
 ## 📂 Project Structure
 
 ```text
-src/
-├── api/
-├── components/
-├── context/
-├── hooks/
-├── pages/
-├── styles/
-├── App.jsx
-└── main.jsx
+cine-stream/
+│
+├── public/
+│
+├── src/
+│   ├── api/
+│   │   └── omdb.js
+│   │
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── MovieCard.jsx
+│   │   ├── MovieRow.jsx
+│   │   └── MoodMatcher.jsx
+│   │
+│   ├── context/
+│   │   └── FavoritesContext.jsx
+│   │
+│   ├── hooks/
+│   │   └── useDebounce.js
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── MovieDetails.jsx
+│   │   └── Favorites.jsx
+│   │
+│   ├── styles/
+│   │   ├── App.css
+│   │   ├── Home.css
+│   │   ├── MovieCard.css
+│   │   ├── MovieDetails.css
+│   │   └── MoodMatcher.css
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── screenshots/
+│   ├── home.png
+│   ├── search.png
+│   ├── movie-details.png
+│   ├── mood-matcher.png
+│   └── favorites.png
+│
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ## 👩‍💻 Author
