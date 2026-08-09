@@ -1,265 +1,120 @@
-# 🎬 CineStream — Media Explorer
+# 🎬 Cine-Stream — Media Explorer
 
-> A modern, responsive movie discovery platform built with React and Vite, powered by the OMDb API.
+Cine-Stream is a Netflix-inspired movie discovery SPA built with **React, Vite, OMDb API, and Gemini AI**. It allows users to discover movies, search titles, view details, save favorites, and get AI-powered recommendations based on their mood.
 
-CineStream is a frontend movie discovery application designed to provide a smooth, cinematic browsing experience. Users can explore curated movie collections, search for movies, view detailed information, save favorites, and find official trailers.
+## 📸 Screenshots
 
----
+### 🏠 Home Page
+<img width="1913" height="983" alt="Screenshot 2026-08-08 193202" src="https://github.com/user-attachments/assets/ad371a2a-45c8-4b7a-a740-f77d916b6ac9" />
 
-## ✨ Overview
 
-CineStream combines a clean streaming-platform-inspired interface with real-time movie data from the **OMDb API**.
+### 🔎 Movie Search
 
-The project focuses on:
+<img width="1917" height="998" alt="Screenshot 2026-08-08 195228" src="https://github.com/user-attachments/assets/ebfcffbc-95e0-455d-bc18-72a458ad0da2" />
 
-* Clean component architecture
-* Responsive UI design
-* Reusable React components
-* API integration
-* Client-side routing
-* Search optimization
-* Persistent favorites
-* Loading and error handling
-* Production-ready frontend structure
 
----
+### 🎬 Movie Details
 
-## 🚀 Features
+<img width="1917" height="988" alt="Screenshot 2026-08-08 195247" src="https://github.com/user-attachments/assets/41d82cd7-8636-4d2c-be00-6201fecf0b97" />
 
-### 🎥 Movie Discovery
-
-* Curated movie categories
-* Trending-style movie sections
-* Horizontal movie sliders
-* Interactive movie cards
-* Infinite scrolling
-
-### 🔎 Smart Search
-
-* Real-time movie search
-* Debounced search input
-* Search loading state
-* Empty search state
-* API error handling
-
-### 📖 Movie Details
-
-Each movie has a dedicated details page containing:
-
-* Movie poster
-* Movie title
-* IMDb rating
-* Release year
-* Runtime
-* Certification
-* Plot
-* Genre
-* Director
-* Cast
-* Release date
-* Language
-* Awards
 
 ### ❤️ Favorites
 
-Users can:
+<img width="1917" height="987" alt="Screenshot 2026-08-08 195205" src="https://github.com/user-attachments/assets/42b2c3be-01b8-41b2-b863-25543f775782" />
 
-* Add movies to favorites
-* Remove movies from favorites
-* View saved movies
-* See total favorites count
-* Access an empty-state experience
-* Persist favorites using browser storage
-
-### ▶️ Official Trailers
-
-The application provides an **Official Trailer** option that searches YouTube for the selected movie's official trailer.
-
-### 📱 Responsive Design
-
-CineStream is designed for:
-
-* Desktop
-* Laptop
-* Tablet
-* Mobile
 
 ---
+
+## ✨ Features
+
+* 🎥 Netflix-style movie discovery UI
+* 🔎 Movie search with **500ms debouncing**
+* ♾️ Infinite scrolling using `IntersectionObserver`
+* ❤️ Favorites with `localStorage`
+* 🎬 Detailed movie information
+* ▶️ Trailer search integration
+* 🤖 AI-powered **Mood Matcher** using Gemini
+* 🖼️ Lazy-loaded movie posters
+* 📱 Responsive design
+* ⚡ Loading and error states
+
+## 🤖 AI Mood Matcher
+
+Describe your mood and Cine-Stream finds a suitable movie.
+
+```text
+Your Mood
+    ↓
+Gemini AI
+    ↓
+Movie Title
+    ↓
+OMDb API
+    ↓
+Movie Recommendation
+```
+
+Example:
+
+> "I'm feeling sad but want an action movie."
+
+The AI recommends a movie, which is then automatically searched through OMDb.
 
 ## 🛠️ Tech Stack
 
-| Technology   | Purpose                     |
-| ------------ | --------------------------- |
-| React        | UI development              |
-| Vite         | Development & build tooling |
-| JavaScript   | Application logic           |
-| CSS          | Styling & responsive design |
-| React Router | Client-side routing         |
-| Axios        | API requests                |
-| React Icons  | Interface icons             |
-| OMDb API     | Movie data                  |
+* React
+* Vite
+* JavaScript
+* CSS
+* React Router
+* OMDb API
+* Google Gemini API
+* Git & GitHub
 
----
+## ⚡ Performance
 
-## 🏗️ Project Architecture
+* **500ms debounce** prevents unnecessary search requests
+* **Infinite scroll** loads movies progressively
+* **Lazy loading** reduces unnecessary image downloads
+* **localStorage** provides persistent favorites
 
-```text
-cine-stream/
-│
-├── public/
-│
-├── src/
-│   │
-│   ├── api/
-│   │   └── omdb.js
-│   │
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── Hero.jsx
-│   │   ├── SearchBar.jsx
-│   │   ├── MovieCard.jsx
-│   │   ├── MovieRow.jsx
-│   │   └── TrailerModal.jsx
-│   │
-│   ├── context/
-│   │   └── FavoritesContext.jsx
-│   │
-│   ├── hooks/
-│   │   └── useDebounce.js
-│   │
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Favorites.jsx
-│   │   └── MovieDetails.jsx
-│   │
-│   ├── styles/
-│   │   ├── App.css
-│   │   ├── Home.css
-│   │   ├── MovieRow.css
-│   │   ├── MovieDetails.css
-│   │   ├── Favorites.css
-│   │   └── TrailerModal.css
-│   │
-│   ├── App.jsx
-│   └── main.jsx
-│
-├── .env
-├── .gitignore
-├── index.html
-├── package.json
-├── Prompt.md
-└── README.md
-```
-
-## 🔐 Environment Configuration
-
-Create a `.env` file in the project root:
-
-```env
-VITE_OMDB_API_KEY=your_api_key
-VITE_OMDB_BASE_URL=https://www.omdbapi.com/
-```
-
-### Important
-
-Never commit your `.env` file to GitHub.
-
-Your `.gitignore` should include:
-
-```gitignore
-node_modules/
-dist/
-.env
-.env.local
-.env.*.local
-```
-
-## ⚙️ Getting Started
-
-### 1. Clone the repository
+## 🚀 Run Locally
 
 ```bash
 git clone https://github.com/saakshigupta-saa/Cine-Stream.git
-```
-
-### 2. Navigate to the project
-
-```bash
-cd cine-stream
-```
-
-### 3. Install dependencies
-
-```bash
+cd Cine-Stream
 npm install
-```
-
-### 4. Configure environment variables
-
-Create `.env` and add your OMDb API credentials.
-
-### 5. Start the development server
-
-```bash
 npm run dev
 ```
 
-The application will be available at the local URL provided by Vite.
+Create a `.env` file:
 
----
-
-## 🏗️ Production Build
-
-Create an optimized production build:
-
-```bash
-npm run build
+```env
+VITE_OMDB_API_KEY=your_omdb_api_key
+VITE_GEMINI_API_KEY=your_gemini_api_key
 ```
 
-Preview the production build locally:
+> 🔐 Never commit your `.env` file or API keys to GitHub.
 
-```bash
-npm run preview
+## 📂 Project Structure
+
+```text
+src/
+├── api/
+├── components/
+├── context/
+├── hooks/
+├── pages/
+├── styles/
+├── App.jsx
+└── main.jsx
 ```
-
----
-
-## 🎨 Design System
-
-CineStream follows a dark cinematic design language inspired by modern streaming services.
-
-### UI Principles
-
-* Strong visual hierarchy
-* Consistent spacing
-* Compact controls
-* Responsive layouts
-* Smooth transitions
-* Interactive hover states
-* Accessible contrast
-* Minimal visual clutter
-
----
-
-
-## 🚀 Deployment
-
-https://cine-stream-steel-sigma.vercel.app/
----
 
 ## 👩‍💻 Author
 
-### Sakshi Gupta
+**Sakshi Gupta**
+BSc Computer Science & Data Analytics — IIT Patna
 
 ---
 
-## 📄 License
-
-This project was developed for educational, portfolio, and learning purposes.
-
----
-
-
-### 🎬 CineStream
-
-**Discover. Explore. Save. Watch.**
+⭐ If you like the project, consider giving it a star!
